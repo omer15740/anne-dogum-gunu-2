@@ -101,6 +101,40 @@ button:hover {
 }
 
 .cake:active { transform: scale(0.995); }
+.gift-wrap { margin-top: 18px; display:flex; justify-content:center; }
+.gift {
+  font-size: 30px;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(180deg,#fff 0%,#ffecec 100%);
+  border: 2px solid #ffd9df;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255,95,160,0.12);
+  transition: transform 180ms ease;
+}
+.gift:active,
+.gift.open { transform: translateY(-6px) rotate(-6deg) scale(1.03); }
+
+.flower {
+  position: absolute;
+  left: 50%;
+  bottom: 42%;
+  font-size: 28px;
+  transform: translate(-50%, 0) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  animation: flowerUp 2200ms cubic-bezier(.15,.8,.3,1) forwards;
+}
+@keyframes flowerUp {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(0.2) rotate(0deg); }
+  20% { opacity: 1; transform: translate(-50%, -18px) scale(1.05) rotate(10deg); }
+  60% { transform: translate(-50%, -110px) scale(1) rotate(40deg); }
+  100% { opacity: 0; transform: translate(-50%, -220px) scale(1.1) rotate(70deg); }
+}
 .hearts {
   position: absolute;
   inset: 0;
